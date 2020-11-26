@@ -7,10 +7,10 @@ class Dustbin
         this.height=100
         this.thickness=20
         this.angle=0
-        this.bottomBody=Bodies.rectangle(this.x,this.y,this.width,this.height,this.thickness,{isStatic:true});
-        this.leftWallBody=Bodies.rectangle(this.x-this.width/2,this.y-this.height/2,this.thickness,{isStatic:true});
+        this.bottomBody=Bodies.rectangle(this.x,this.y,this.width,this.thickness,{isStatic:true});
+        this.leftWallBody=Bodies.rectangle(this.x-this.width/2,this.y-this.height/2,this.thickness,this.height,{isStatic:true});
         Matter.Body.setAngle(this.leftWallBody,this.angle)
-        this.rightWallBody=Bodies.rectangle(this.x+this.width/2,this.y-this.height/2,this.thickness,{isStatic:true});
+        this.rightWallBody=Bodies.rectangle(this.x+this.width/2,this.y-this.height/2,this.thickness,this.height,{isStatic:true});
         Matter.Body.setAngle(this.rightWallBody,this.angle*-1)
         World.add(world,this.bottomBody)
         World.add(world,this.leftWallBody)

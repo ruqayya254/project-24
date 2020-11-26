@@ -5,13 +5,10 @@ const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 const Render = Matter.Render;
 
-function preload()
-{
-	
-}
+
 
 function setup() {
-	createCanvas(800, 700);
+	createCanvas(1600, 700);
 
 
 	engine = Engine.create();
@@ -50,6 +47,14 @@ function draw() {
   Dustbin1.display();
   Ground1.display();
  
+}
+
+function keyPressed(){
+
+	if(keyCode===UP_ARROW){
+
+		Matter.Body.applyForce(Paper1.body,Paper1.body.position,{x:85,y:-85});
+}
 }
 
 
